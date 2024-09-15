@@ -1,10 +1,12 @@
 from fastapi import FastAPI, Path
 from typing import Annotated
 import uvicorn
+from item_views import router as items_router
 
 app = FastAPI(
     title='Open gashtet'
 )
+app.include_router(items_router)
 
 fake_users = [
     {'id': 1, 'role': 'admin', 'name': 'vlad'},
