@@ -25,13 +25,6 @@ def get_user(user_id: int):
             return user.get("name")
 
 
-fake_users2 = [
-    {'id': 1, 'role': 'admin', 'name': 'vlad'},
-    {'id': 2, 'role': 'user', 'name': 'oly'},
-    {'id': 3, 'role': 'peple', 'name': 'matvei'},
-]
-
-
 @app.post("/users/{user_id}")
 def change_new_name(user_id: int, new_name: str):
     current_user = [user for user in fake_users2 if user.get('id') == user_id][0]
